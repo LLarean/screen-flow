@@ -96,7 +96,7 @@ namespace ScreenFlow
         }
 
         [Test]
-        public void HideAll_HidesAllViewsOnScene()
+        public void HideAllViews_HidesAllViewsOnScene()
         {
             // Arrange
             var view1 = _viewContainer.Get<TestView>();
@@ -105,7 +105,7 @@ namespace ScreenFlow
             view1.Show(); // Показываем view
 
             // Act
-            _viewContainer.HideAll();
+            _viewContainer.HideAllViews();
 
             // Assert
             Assert.IsFalse(view1.IsVisible);
