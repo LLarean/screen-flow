@@ -1,38 +1,29 @@
-﻿using UnityEngine;
+﻿using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace ScreenFlow.MVP
 {
     /// <summary>
     /// Example view for user profile screen
     /// </summary>
-    public class UserProfileView : View, IView<UserProfileModel>
+    public class UserProfileView : View, IUserProfileView
     {
         [Header("UI Components")]
-        [SerializeField] private TMPro.TextMeshProUGUI _userNameText;
-        [SerializeField] private TMPro.TextMeshProUGUI _levelText;
-        [SerializeField] private UnityEngine.UI.Slider _experienceSlider;
+        [SerializeField] private TextMeshProUGUI _userNameText;
+        [SerializeField] private TextMeshProUGUI _levelText;
+        [SerializeField] private Button _toMenu;
+
+        public event Action OnToMenuClicked;
 
         public void UpdateView(UserProfileModel model)
         {
-            if (_userNameText != null)
-                _userNameText.text = model.UserName;
-            
-            if (_levelText != null)
-                _levelText.text = $"Level {model.Level}";
-            
-            if (_experienceSlider != null)
-                _experienceSlider.value = model.Experience / 1000f; // Assuming 1000 is max XP per level
+            _userNameText.text = model.UserName;
+            _levelText.text = $"Level {model.Level}";
+            _toMenu.onClick.AddListener(ToMenuClick);
         }
 
-        // Example button click handlers
-        public void OnBackButtonClicked()
-        {
-            // Presenter will handle this
-        }
-
-        public void OnSettingsButtonClicked()
-        {
-            // Presenter will handle this
-        }
+        private void ToMenuClick() => OnToMenuClicked?.Invoke();
     }
 }
