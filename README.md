@@ -5,6 +5,8 @@
 ![Development Status](https://img.shields.io/badge/Status-In%20Development-orange)
 ![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
 
+⚠️ WARNING: This project is in early development stage. The API is subject to major changes, functionality is incomplete. Not recommended for production use.
+
 *Elegant screen management system for Unity with MVP architecture and code generation*
 
 ## Overview
@@ -103,7 +105,7 @@ Editor tools for automatically creating Screen-Presenter-Model templates.
 
 ## Contributing
 
-- 
+🚧 Coming Soon: Contribution guidelines will be available once the core architecture is established.
 
 ## License
 
@@ -111,6 +113,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ## Links
 
-- [Documentation](...)
-- [API Reference](...)
+- [Documentation](...) *(coming soon)*
+- [API Reference](...) *(coming soon)*
+- [Examples](...) *(coming soon)*
 
